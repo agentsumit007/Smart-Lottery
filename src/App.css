@@ -1,0 +1,84 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.home-img {
+  border-radius: 5vmax;
+}
+.home-text-below {
+  background-image: linear-gradient(to right, rgb(91, 125, 219), rgb(21, 48, 123));
+  border-radius: 5vmax;
+  
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.text--white {
+  color: white;
+}
+.blink:hover {
+  color: black;
+}
+
+.logo {
+  margin-right: 10px;
+}
+.top-details {
+  background-image: linear-gradient(to right, #4c239e, #0062cc, #ADD8E6);
+  margin: 0.3vmin;
+  padding: 1vmin;
+  border-radius: 10px;
+  font-size: 2.5vmin;
+}
+.fetched-balance {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.heading-text {
+  font-weight: 400;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.buy-ticket-button {
+  height: 15vmin;
+  width: 40vmin;
+  font-size: 3.5vmin;
+}
