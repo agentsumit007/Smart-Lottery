@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/Smart-Lottery/static/css/main.73b33e7d.css",
-    "main.js": "/Smart-Lottery/static/js/main.9f0efe3c.js",
+    "main.js": "/Smart-Lottery/static/js/main.c8efa041.js",
     "static/js/787.c90eb3c1.chunk.js": "/Smart-Lottery/static/js/787.c90eb3c1.chunk.js",
     "static/media/bg-full.jpg": "/Smart-Lottery/static/media/bg-full.73467496f605b6246e15.jpg",
     "static/media/MetaMask_icon.png": "/Smart-Lottery/static/media/MetaMask_icon.d9c41a5680a1daaae624.png",
     "static/media/Ethereum-Landscape-Black.png": "/Smart-Lottery/static/media/Ethereum-Landscape-Black.6b7759ef28d6f6cd09e7.png",
     "index.html": "/Smart-Lottery/index.html",
     "main.73b33e7d.css.map": "/Smart-Lottery/static/css/main.73b33e7d.css.map",
-    "main.9f0efe3c.js.map": "/Smart-Lottery/static/js/main.9f0efe3c.js.map",
+    "main.c8efa041.js.map": "/Smart-Lottery/static/js/main.c8efa041.js.map",
     "787.c90eb3c1.chunk.js.map": "/Smart-Lottery/static/js/787.c90eb3c1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.73b33e7d.css",
-    "static/js/main.9f0efe3c.js"
+    "static/js/main.c8efa041.js"
   ]
 }
