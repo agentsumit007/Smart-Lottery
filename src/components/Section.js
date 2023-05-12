@@ -31,8 +31,8 @@ export default function Section(props) {
 
     const fetchBalance = async () => {
         changeBalance("Fetching Information...");
-        const balance = await global.providerRead.getBalance(global.address);
-        changeBalance(ethers.utils.formatEther(balance));
+        const balance = ethers.utils.formatEther(await global.providerRead.getBalance(global.address));
+        changeBalance(Number(balance).toFixed(4)+' ethers');
     }
     const getTicketCount = async () => {
         setTicketCount('Fetching Information...');

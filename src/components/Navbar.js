@@ -5,7 +5,7 @@ export default function Navbar(props) {
   const navigate = useNavigate();
   const [logText, changeLogText] = useState("Login");
   useEffect(() => {
-    if (global.logged) {
+    if (!global.logged) {
       changeLogText("Logout");
     }
     else {

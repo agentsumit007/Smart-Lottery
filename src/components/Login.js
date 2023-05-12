@@ -37,28 +37,33 @@ export default function Login(props) {
             props.showAlert("Enter Valid Ethereum Address", 'warning');
         }
     }
-    async function handleLoginMetaMask() {
-        try {
-            await global.connectMetaMask();
-            const metaAddress = global.metamaskAccounts[0];
-            if (username.length === 0) {
-                props.showAlert("Enter Username", 'warning');
-            }
-            else if (metaAddress.toLowerCase() === global.admin.toLowerCase()) {
-                global.logged = true;
-                global.address = metaAddress;
-                global.username = username;
-                navigate("/Admin");
-            }
-            else {
-                global.logged = true;
-                global.address = metaAddress;
-                global.username = username;
-                navigate("/Section");
-            }
+    const handleLoginMetaMask = async () => {
+        if (username.length === 0) {
+            props.showAlert("Enter Username", 'warning');
         }
-        catch (e) {
-            props.showAlert("User rejected the connection", 'danger');
+        else {
+            try {
+                await global.connectMetaMask();
+                const metaAddress = global.metamaskAccounts[0];
+                // console.log(metaAddress);
+
+                if (metaAddress.toLowerCase() === global.admin.toLowerCase()) {
+                    global.logged = true;
+                    global.address = metaAddress;
+                    global.username = username;
+                    navigate("/Admin");
+                }
+                else {
+                    global.logged = true;
+                    global.address = metaAddress;
+                    global.username = username;
+                    navigate("/Section");
+                }
+            }
+            catch (e) {
+                props.showAlert("User rejected the connection", 'danger');
+            }
+
         }
     }
 

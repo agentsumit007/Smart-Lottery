@@ -15,8 +15,8 @@ export default function Admin(props) {
 
     const fetchBalance = async () => {
         changeBalance("Fetching Information...");
-        const balance = await global.providerRead.getBalance(global.address);
-        changeBalance(ethers.utils.formatEther(balance));
+        const balance = ethers.utils.formatEther(await global.providerRead.getBalance(global.address));
+        changeBalance(Number(balance).toFixed(4)+' ethers');
     }
     const handleShowParticipants = async () => {
 
