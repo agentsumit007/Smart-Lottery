@@ -6,18 +6,15 @@ global.admin = "0x8C9a47097907C8FD8b7f26C88d7e2be91ED65127";
 global.address = "";
 global.username = "";
 
-
-global.providerRead = new ethers.providers.JsonRpcProvider('https://eth-sepolia.g.alchemy.com/v2/o1jhzr5ayRjdXiVrwy2JK3vddBLg6TQ6');
-
 global.connectMetaMask = async ()=> {
-    global.metamaskAccounts = await window.ethereum.request({
-        method: "eth_requestAccounts",
-      });
+	global.metamaskAccounts = await window.ethereum.request({
+		method: "eth_requestAccounts",
+	});
 }
 
-global.providerWrite = new ethers.providers.Web3Provider(window.ethereum);
-global.signer = global.providerWrite.getSigner();
 
+
+global.providerRead = new ethers.providers.JsonRpcProvider('https://eth-sepolia.g.alchemy.com/v2/o1jhzr5ayRjdXiVrwy2JK3vddBLg6TQ6');
 global.contractAddress = '0x924591fC3E533B6Dc51E14baA843a91B6e1f8936';
 global.contractABI = [
 	{
@@ -291,7 +288,13 @@ global.contractABI = [
 ]
 
 global.readContract = new ethers.Contract(global.contractAddress,global.contractABI,global.providerRead);
-global.writeContract = new ethers.Contract(global.contractAddress,global.contractABI,global.signer);
+
+try {
+	global.providerWrite = new ethers.providers.Web3Provider(window.ethereum);
+	global.signer = global.providerWrite.getSigner();
+	global.writeContract = new ethers.Contract(global.contractAddress,global.contractABI,global.signer);
+}
+catch(e) {}
 
 
 

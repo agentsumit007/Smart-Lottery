@@ -17,7 +17,7 @@ export default function Navbar(props) {
     if (global.logged) {
       global.logged = false;
       global.metamaskAccounts = undefined;
-      console.log(global.accounts)
+      // console.log(global.accounts)
       navigate("/Login");
       changeLogText('Login');
       props.showAlert("User Logged Out, please Disconnect your wallet manually. For security reasons, we are not allowed to close the connection from our end",'success');
