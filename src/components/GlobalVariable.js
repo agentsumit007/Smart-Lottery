@@ -294,7 +294,9 @@ try {
 	global.signer = global.providerWrite.getSigner();
 	global.writeContract = new ethers.Contract(global.contractAddress,global.contractABI,global.signer);
 }
-catch(e) {}
+catch(e) {
+	alert("MetaMask not found, please intall metamask and reload this page");
+}
 
 
 
