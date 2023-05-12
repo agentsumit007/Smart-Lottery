@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 export default function Home(props) {
   return (
     <>
-      {!global.logged && <div className='mx-5 my-5'>
+      {!global.logged && <div className='container-fluid'>
         <div className='row'>
           <div className=' fw-bold display-1 text-muted text-center'>Welcome to Smart Lottery!</div>
         </div>
@@ -18,7 +18,7 @@ export default function Home(props) {
             <br/>
             <h5 className='display-6'>A WEB 3.0 environment enforces fairness to a mostly infringed traditional method.</h5>
             <br/><br/>
-            <p className='lead text-left home-text-below'>This application extensively uses metamask for its transactions, please install it if u have'nt already.</p>
+            <p className='fs-5 text-left home-text-below'>This application extensively uses metamask for its transactions, please install it if u have'nt already.</p>
             <span><a href='https://metamask.io/download/' target='_blank'><img src={require('../images/MetaMask_icon.png')} height={'50vmax'} /></a></span>
           </div>
         </div>
