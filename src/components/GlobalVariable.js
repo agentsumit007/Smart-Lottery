@@ -295,7 +295,7 @@ try {
 	global.writeContract = new ethers.Contract(global.contractAddress,global.contractABI,global.signer);
 }
 catch(e) {
-	alert("MetaMask not found, please intall metamask and reload this page");
+	alert("MetaMask not found, please install metamask and reload this page");
 }
 
 
