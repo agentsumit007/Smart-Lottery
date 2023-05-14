@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 export default function Home(props) {
   return (
     <>
-      {!global.logged && <div className='container-fluid'>
+      <div className='container-fluid'>
         <div className='row'>
           <div className=' fw-bold display-1 text-muted text-center'>Welcome to Smart Lottery!</div>
         </div>
@@ -23,7 +23,7 @@ export default function Home(props) {
           </div>
         </div>
       </div>
-      </div>}
+      </div>
     </>
   )
 }
