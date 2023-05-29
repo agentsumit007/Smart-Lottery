@@ -5,7 +5,7 @@ import WinnerListItem from './WinnerListItem';
 
 
 
-export default function Section(props) {
+    export default function Section(props) {
     useEffect(() => {
         if(global.wonTheLottery) {
             showWonTheLottery();

@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import "./GlobalVariable"
-import { ethers } from "ethers";
 
 
 

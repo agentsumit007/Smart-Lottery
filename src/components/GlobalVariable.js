@@ -6,6 +6,8 @@ global.admin = "0x8C9a47097907C8FD8b7f26C88d7e2be91ED65127";
 global.address = "";
 global.username = "";
 
+
+
 global.connectMetaMask = async ()=> {
 	global.metamaskAccounts = await window.ethereum.request({
 		method: "eth_requestAccounts",
@@ -299,6 +301,3 @@ catch(e) {
 }
 
 
-
-
-global.wonTheLottery = false;

@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Login(props) {
+
+
     const navigate = useNavigate();
+
+
     const [walletAddress, newAddress] = useState("");
     const [username, newUsername] = useState("");
 
@@ -75,7 +79,9 @@ export default function Login(props) {
                 <h5 className="display-6" style={{ textAlign: 'center' }}>__ __ __</h5>
                 <label htmlFor="address-bar" className="text--white display-6 my-2">Ethereum Address</label>
                 <input className="form-control form-control-lg flex-child" onChange={onChangeHandlerWalletAddress} value={walletAddress} type="text" placeholder="Paste your 42 character ethereum address here.." aria-label=".form-control-lg example" />
+                
                 <button className="btn btn-light flex-child my-4" onClick={handleLogin}>Login</button>
+                
                 <h5 className="display-6" style={{ textAlign: 'center' }}>-- OR --</h5>
                 <button className="btn btn-light flex-child my-4" onClick={handleLoginMetaMask}>Login with Metamask</button>
             </div>
