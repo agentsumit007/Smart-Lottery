@@ -21,7 +21,7 @@ contract Lottery {
         return lotteryHistoryNames[lottery];
     }
 
-    function getBalance() public view returns (uint) { //balance of contract
+    function getBalance() public view returns (uint) { // balance of contract kitna ethers contract me hai
         return address(this).balance;
     }
 
@@ -36,7 +36,7 @@ contract Lottery {
 
     function enter(string memory name) public payable { //enter participant into the lottery only if they have minimum of ticket amount balance
         require(msg.value > .01 ether);
-        players.push(payable(msg.sender));
+        players.push(payable(msg.sender));       // buy ticket wala
         playerNames.push(name);
     }
 

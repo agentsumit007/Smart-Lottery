@@ -21,6 +21,7 @@ function App() {
       setAlert(null);
     },4000);
   }
+  
   return (
     <>
       <Navbar showAlert={showAlert}/>

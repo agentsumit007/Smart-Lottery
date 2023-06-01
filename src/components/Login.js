@@ -49,7 +49,6 @@ export default function Login(props) {
             try {
                 await global.connectMetaMask();
                 const metaAddress = global.metamaskAccounts[0];
-                // console.log(metaAddress);
 
                 if (metaAddress.toLowerCase() === global.admin.toLowerCase()) {
                     global.logged = true;

@@ -6,20 +6,6 @@ import WinnerListItem from './WinnerListItem';
 
 
     export default function Section(props) {
-    useEffect(() => {
-        if(global.wonTheLottery) {
-            showWonTheLottery();
-        }
-    })
-
-    const showWonTheLottery = async () => {
-        const w = await global.readContract.getLotteryId();
-        const name = await global.readContract.getWinnerNameByLottery(w-1);
-        if(name === global.username) {
-            props.showAlert('Congratulations, you won the lottery.','success');
-        }
-        global.wonTheLottery = false;
-    }
 
     const [userBalance, changeBalance] = useState("");
     const [ticketCount, setTicketCount] = useState('See how many tickets you own.');
@@ -29,12 +15,12 @@ import WinnerListItem from './WinnerListItem';
 
 
 
-    const fetchBalance = async () => {
+    const fetchBalance = async () => {  //---------------------------------------------------------------------
         changeBalance("Fetching Information...");
         const balance = ethers.utils.formatEther(await global.providerRead.getBalance(global.address));
         changeBalance(Number(balance).toFixed(4)+' ethers');
     }
-    const getTicketCount = async () => {
+    const getTicketCount = async () => { //--------------------------------------------------------------------
         setTicketCount('Fetching Information...');
 
         const addressList = await global.readContract.getPlayers();
@@ -48,8 +34,7 @@ import WinnerListItem from './WinnerListItem';
         setTicketCount('You currently have ' + count + ' ticket(s)');
     }
 
-    const handleBuyTicket = async () => {
-        // console.log(global.metamaskAccounts);
+    const handleBuyTicket = async () => { //----------------------------------------------------------------------
         if (!global.metamaskAccounts) {
             props.showAlert('Connect to MetaMask first', "warning")
             global.connectMetaMask();
@@ -66,13 +51,13 @@ import WinnerListItem from './WinnerListItem';
         }
     }
 
-    const handleShowPool = async () => {
+    const handleShowPool = async () => { //------------------------------------------------------------------------
         setContractbalance('Fetching...');
         const currBal = await global.readContract.getBalance();
         setContractbalance(ethers.utils.formatEther(currBal) + ' ethers')
     }
 
-    const handleShowParticipants = async () => {
+    const handleShowParticipants = async () => { //------------------------------------------------------------------
         newListOfParticipants([<p className='lead'>Fetching Information.... Might take some time.</p>]);
         const addressList = await global.readContract.getPlayers();
         const namesList = await global.readContract.getPlayerNames();
@@ -88,7 +73,7 @@ import WinnerListItem from './WinnerListItem';
             newListOfParticipants(arr);
         }
     }
-    const showHistoryOfWinners = async () => {
+    const showHistoryOfWinners = async () => { //------------------------------------------------------------------
         setHistoryOfWinners([<h5 className='display-6'>Fetching Information...</h5>]);
         let w = await global.readContract.getLotteryId();
         let arr = []

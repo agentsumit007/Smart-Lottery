@@ -13,12 +13,12 @@ export default function Admin(props) {
     const [lastWinnerText, setLastWinnerText] = useState('Fetching Information...');
     const [historyOfWinners, setHistoryOfWinners] = useState([<h5 className='display-6'>Fetching Information...</h5>]);
 
-    const fetchBalance = async () => {
+    const fetchBalance = async () => { //---------------------------------------------------------------------------
         changeBalance("Fetching Information...");
         const balance = ethers.utils.formatEther(await global.providerRead.getBalance(global.address));
         changeBalance(Number(balance).toFixed(4)+' ethers');
     }
-    const handleShowParticipants = async () => {
+    const handleShowParticipants = async () => { //------------------------------------------------------------------
 
         newListOfParticipants([<p className='lead'>Fetching Information.... Might take some time.</p>]);
         const addressList = await global.readContract.getPlayers();
@@ -34,12 +34,12 @@ export default function Admin(props) {
             newListOfParticipants(arr);
         }
     }
-    const handleShowPool = async () => {
+    const handleShowPool = async () => { //------------------------------------------------------------------------
         setContractbalance('Fetching...');
         const currBal = await global.readContract.getBalance();
         setContractbalance(ethers.utils.formatEther(currBal) + ' ethers')
     }
-    const handlePickWinner = async () => {
+    const handlePickWinner = async () => { //----------------------------------------------------------------------
         setPickWinnerText('Processing...');
         const addressList = await global.readContract.getPlayers();
         if(addressList.length === 0) {
@@ -53,7 +53,7 @@ export default function Admin(props) {
             setPickWinnerText(<p className='lead'>Winner Decided, look for the last winner</p>);
         }
     }
-    const showLastWinner = async () => {
+    const showLastWinner = async () => { //-----------------------------------------------------------------------
         setLastWinnerText('Fetching Information...');
         const w = await global.readContract.getLotteryId();
         const winName = await global.readContract.getWinnerNameByLottery(w-1);
@@ -63,7 +63,7 @@ export default function Admin(props) {
         setLastWinnerText(winName+' won the lottery of amount '+winAmount+' ethers');
     }
 
-    const showHistoryOfWinners = async () => {
+    const showHistoryOfWinners = async () => { //------------------------------------------------------------------
         setHistoryOfWinners([<h5 className='display-6'>Fetching Information...</h5>]);
         let w = await global.readContract.getLotteryId();
         let arr = []
